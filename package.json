@@ -5,13 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:prod": "next build && (cp -r public .next/standalone/public 2>/dev/null || true) && cp -r .next/static .next/standalone/.next/static",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
-    "@studio-freight/lenis": "^1.0.42",
     "clsx": "^2.1.1",
     "framer-motion": "^12.34.3",
     "gsap": "^3.14.2",

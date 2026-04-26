@@ -34,3 +34,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# PM2
+/logs
+.pm2
+
+# env
+.env
+.env.local
+.env.production
+.env.production.local

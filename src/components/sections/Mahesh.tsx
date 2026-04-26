@@ -76,15 +76,21 @@ export default function Mahesh() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Content aligned left again */}
         <div className="text-foreground dark:text-[#E0E0E0]">
-          <h2 className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium text-[var(--brand-indigo)] dark:text-[#c8a2c8] opacity-70 mb-4">
+          <span className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium opacity-70 mb-4 block"
+            style={{ color: "var(--brand-indigo)" }}
+          >
             Transformation
-          </h2>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-8">
+          </span>
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-8"
+            style={{ color: "var(--foreground)" }}
+          >
             MAHESH.
             <br />
-            <span className="opacity-80 font-light text-3xl md:text-5xl italic font-sans text-[var(--brand-indigo)] dark:text-[#4B0082]">The Transformation Forge</span>
-          </h1>
-          <p className="text-lg md:text-xl font-light tracking-wide max-w-xl leading-relaxed text-foreground/80 dark:text-gray-300 font-sans">
+            <span className="opacity-80 font-light text-3xl md:text-5xl italic font-sans" style={{ color: "var(--brand-indigo)" }}>The Transformation Forge</span>
+          </h2>
+          <p className="text-lg md:text-xl font-light tracking-wide max-w-xl leading-relaxed font-sans"
+            style={{ color: "var(--text-secondary)" }}
+          >
             Evolution requires Dissolution. We remove the barriers to your future, breaking down the obsolete to make space for the new. The eternal cycle completes and begins again.
           </p>
         </div>

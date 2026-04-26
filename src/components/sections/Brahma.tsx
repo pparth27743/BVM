@@ -78,15 +78,21 @@ export default function Brahma() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Content */}
         <div>
-          <h2 className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium mb-4 opacity-70">
+          <span className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium mb-4 block opacity-70"
+            style={{ color: "var(--brand-gold)" }}
+          >
             Creation
-          </h2>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-8 drop-shadow-lg text-foreground dark:text-[#FFD700]">
+          </span>
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-8 drop-shadow-lg"
+            style={{ color: "var(--foreground)" }}
+          >
             BRAHMA.
             <br />
-            <span className="opacity-80 font-light text-3xl md:text-5xl italic text-[var(--brand-gold)] dark:text-inherit">The Incubation Lab</span>
-          </h1>
-          <p className="text-lg md:text-xl font-light tracking-wide max-w-lg leading-relaxed text-foreground/80 dark:text-white/80 font-sans">
+            <span className="opacity-80 font-light text-3xl md:text-5xl italic" style={{ color: "var(--brand-gold)" }}>The Incubation Lab</span>
+          </h2>
+          <p className="text-lg md:text-xl font-light tracking-wide max-w-lg leading-relaxed font-sans"
+            style={{ color: "var(--text-secondary)" }}
+          >
             Bringing ideas from zero to one. We architect the genesis of frontier technology, transforming ethereal concepts into structural reality. Every great endeavor requires a divine spark.
           </p>
         </div>

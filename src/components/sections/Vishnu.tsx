@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
+import { useTheme } from "next-themes";
 
-function DataSphere() {
+function DataSphere({ theme }: { theme: string | undefined }) {
   const pointsRef = useRef<import("three").Points>(null);
   const nodes = 7500;
   
@@ -29,7 +30,7 @@ function DataSphere() {
     }
     
     return array;
-  }, [nodes]);
+  }, []);
 
   useFrame((state, delta) => {
     if (pointsRef.current) {
@@ -39,16 +40,18 @@ function DataSphere() {
     }
   });
 
+  const isLight = theme === "light";
+
   return (
     <group rotation={[Math.PI / 8, 0, 0]}>
       <Points ref={pointsRef} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#00ffff" /* Electric Teal */
-          size={0.03}
+          color={isLight ? "#0F52A8" : "#00ffff"}
+          size={isLight ? 0.04 : 0.03}
           sizeAttenuation={true}
           depthWrite={false}
-          opacity={0.8}
+          opacity={isLight ? 0.7 : 0.8}
         />
       </Points>
     </group>
@@ -56,33 +59,48 @@ function DataSphere() {
 }
 
 export default function Vishnu() {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const theme = mounted ? resolvedTheme : "dark";
+
   return (
-    <section className="relative w-full min-h-screen py-24 flex items-center bg-gradient-to-b from-[#1F1c16] via-[#05111F] to-[#010912] text-[#007BFF] overflow-hidden">
+    <section className="relative w-full min-h-screen py-24 flex items-center transition-colors duration-700 bg-gradient-to-b from-[#F2EFE8] via-[#E8EFF8] to-[#D5E4F5] dark:from-[#1F1c16] dark:via-[#05111F] dark:to-[#010912] overflow-hidden">
       
       {/* 3D Visuals overlay */}
       <div className="absolute inset-0 z-0 h-full w-full">
         <Canvas camera={{ position: [0, 0, 6], fov: 60 }}>
-          <ambientLight intensity={1} />
-          <DataSphere />
+          <ambientLight intensity={theme === "light" ? 1.5 : 1} />
+          <DataSphere theme={theme} />
         </Canvas>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-right md:-scale-x-100 flex-row-reverse">
-        {/* Flip the content over for symmetry or just normal? Layout: left is content or right is content. Let's make content right aligned. */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* Empty div for layout — pushes content to the right column on md+ */}
+        <div className="hidden md:block pointer-events-none" />
         
-        {/* Helper layout hack to place content right */}
-        <div className="hidden md:block pointer-events-none md:-scale-x-100" />
-        
-        <div className="md:-scale-x-100 text-[#E0EFFF]">
-          <h2 className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium text-[#00ffff] opacity-70 mb-4">
+        <div className="md:text-right">
+          <span
+            className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium opacity-70 mb-4 block"
+            style={{ color: "var(--brand-blue)" }}
+          >
             Preservation
-          </h2>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-8 drop-shadow-[0_0_20px_rgba(0,123,255,0.4)]">
+          </span>
+          <h2
+            className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-8"
+            style={{ color: "var(--foreground)" }}
+          >
             VISHNU.
             <br />
-            <span className="opacity-80 font-light text-3xl md:text-5xl italic font-sans text-[#007BFF]">The Preservation Core</span>
-          </h1>
-          <p className="text-lg md:text-xl font-light tracking-wide max-w-lg leading-relaxed text-blue-100 font-sans ml-auto">
+            <span
+              className="opacity-80 font-light text-3xl md:text-5xl italic font-sans"
+              style={{ color: "var(--brand-blue)" }}
+            >The Preservation Core</span>
+          </h2>
+          <p
+            className="text-lg md:text-xl font-light tracking-wide max-w-lg leading-relaxed font-sans md:ml-auto"
+            style={{ color: "var(--text-secondary)" }}
+          >
             Scaling what works. The maintainer of ultimate equilibrium. We don&apos;t just build. We ensure what exists becomes immortal, fortifying structures against the test of time.
           </p>
         </div>

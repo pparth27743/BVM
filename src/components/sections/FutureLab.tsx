@@ -53,13 +53,20 @@ function BlackHole({ theme }: { theme: string | undefined }) {
 
 export default function FutureLab() {
   const [isHovered, setIsHovered] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   const theme = mounted ? resolvedTheme : "dark";
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+  };
+
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center transition-colors duration-700 bg-background text-foreground dark:bg-black dark:text-white overflow-hidden py-24">
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center transition-colors duration-700 bg-background text-foreground overflow-hidden py-24">
       
       {/* Deep portal backdrop */}
       <div className="absolute inset-0 z-0 h-full w-full">
@@ -70,39 +77,79 @@ export default function FutureLab() {
       </div>
 
       <div className="relative z-10 w-full max-w-2xl mx-auto px-6 text-center flex flex-col items-center justify-center h-full">
-        <h2 className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium text-foreground/50 dark:text-white/50 mb-6">
+        <span
+          className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium mb-6 block"
+          style={{ color: "var(--text-muted)" }}
+        >
           The Horizon
-        </h2>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-4 drop-shadow-[0_0_20px_rgba(20,18,16,0.1)] dark:drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+        </span>
+        <h2
+          className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-4"
+          style={{ color: "var(--foreground)" }}
+        >
           The Future Lab
-        </h1>
-        <p className="text-lg md:text-xl font-light tracking-widest uppercase mb-12 text-foreground/60 dark:text-gray-400">
+        </h2>
+        <p
+          className="text-lg md:text-xl font-light tracking-widest uppercase mb-12"
+          style={{ color: "var(--text-muted)" }}
+        >
           Step into the Lab.
         </p>
 
-        {/* Glowing Waitlist Form */}
-        <form 
-          className="relative w-full max-w-md group"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          {/* Ambient Glow behind input */}
-          <div 
-            className={`absolute inset-0 rounded-full blur-[20px] transition-all duration-700 ease-out pointer-events-none ${
-              isHovered ? "bg-[var(--brand-gold)] opacity-20 dark:bg-[#FFD700] dark:opacity-30" : "bg-transparent opacity-0"
-            }`}
-          />
-          
-          <input
-            type="email"
-            placeholder="Enter your transmission coordinates"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onFocus={() => setIsHovered(true)}
-            onBlur={() => setIsHovered(false)}
-            required
-            className="relative w-full bg-[var(--surface-raised)] dark:bg-black/40 backdrop-blur-md border border-[var(--border-mid)] dark:border-white/20 text-foreground dark:text-white placeholder-foreground/40 dark:placeholder-white/40 px-8 py-5 rounded-full outline-none font-sans text-sm tracking-widest transition-all duration-500 focus:border-[var(--brand-gold)] dark:focus:border-[#FFD700] focus:bg-[var(--surface-1)] dark:focus:bg-black/60 shadow-[0_0_0_1px_transparent] focus:shadow-[0_0_15px_1px_rgba(154,122,32,0.2)] dark:focus:shadow-[0_0_15px_1px_rgba(255,215,0,0.3)] text-center"
-          />
-        </form>
+        {/* Waitlist Form */}
+        {submitted ? (
+          <div
+            className="w-full max-w-md text-center py-5 rounded-full border backdrop-blur-md transition-all duration-500"
+            style={{
+              backgroundColor: "var(--surface-raised)",
+              borderColor: "var(--brand-gold)",
+              color: "var(--brand-gold)",
+            }}
+          >
+            <span className="text-sm font-medium tracking-widest uppercase">
+              Transmission Received ✦
+            </span>
+          </div>
+        ) : (
+          <form 
+            className="relative w-full max-w-md group flex flex-col sm:flex-row gap-3 items-center"
+            onSubmit={handleSubmit}
+          >
+            {/* Ambient Glow behind input */}
+            <div 
+              className={`absolute inset-0 rounded-full blur-[20px] transition-all duration-700 ease-out pointer-events-none ${
+                isHovered ? "opacity-20" : "opacity-0"
+              }`}
+              style={{ background: isHovered ? "var(--brand-gold)" : "transparent" }}
+            />
+            
+            <input
+              type="email"
+              placeholder="Enter your transmission coordinates"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              onFocus={() => setIsHovered(true)}
+              onBlur={() => setIsHovered(false)}
+              required
+              className="relative w-full backdrop-blur-md rounded-full outline-none font-sans text-sm tracking-widest transition-all duration-500 px-8 py-4"
+              style={{
+                backgroundColor: "var(--surface-raised)",
+                border: "1px solid var(--border-mid)",
+                color: "var(--foreground)",
+              }}
+            />
+            <button
+              type="submit"
+              className="w-full sm:w-auto px-7 py-4 rounded-full text-sm font-medium tracking-wide whitespace-nowrap transition-all duration-300 hover:opacity-80 cursor-pointer"
+              style={{
+                backgroundColor: "var(--foreground)",
+                color: "var(--background)",
+              }}
+            >
+              Join Waitlist
+            </button>
+          </form>
+        )}
       </div>
     </section>
   );

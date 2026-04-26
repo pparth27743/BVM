@@ -29,7 +29,7 @@ function DataGlobe({ theme }: { theme: string | undefined }) {
     radius * Math.cos(Math.PI / 4) * Math.sin(Math.PI / 3),
     radius * Math.sin(Math.PI / 8),
     radius * Math.cos(Math.PI / 3)
-  ), [radius]);
+  ), []);
 
   // Generate target points for data streams
   const streams = useMemo(() => {
@@ -50,7 +50,7 @@ function DataGlobe({ theme }: { theme: string | undefined }) {
       lines.push({ target: targetPos, mid: midPos });
     }
     return lines;
-  }, [indiaPos, radius]);
+  }, [indiaPos]);
 
   useFrame((state, delta) => {
     if (groupRef.current) {
@@ -133,15 +133,21 @@ export default function Hub() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Content */}
         <div className="md:pr-12">
-          <h2 className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium text-[var(--brand-gold)] dark:text-[#FFD700] opacity-90 dark:opacity-70 mb-4">
+          <span className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium opacity-90 dark:opacity-70 mb-4 block"
+            style={{ color: "var(--brand-gold)" }}
+          >
             The Hub
-          </h2>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-8">
+          </span>
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-8"
+            style={{ color: "var(--foreground)" }}
+          >
             BVM HUB.
             <br />
-            <span className="opacity-80 font-light text-3xl md:text-5xl italic font-sans text-foreground/70 dark:text-gray-300">India to the World</span>
-          </h1>
-          <p className="text-lg md:text-xl font-light tracking-wide max-w-xl leading-relaxed text-foreground/80 dark:text-gray-400 font-sans">
+            <span className="opacity-80 font-light text-3xl md:text-5xl italic font-sans" style={{ color: "var(--text-secondary)" }}>India to the World</span>
+          </h2>
+          <p className="text-lg md:text-xl font-light tracking-wide max-w-xl leading-relaxed font-sans"
+            style={{ color: "var(--text-secondary)" }}
+          >
             Our roots and our reach. From the cradle of ancient mathematics and astronomy, we broadcast next-generation engineering logic globally. High-End Engineering, Rooted in Indian Wisdom.
           </p>
         </div>

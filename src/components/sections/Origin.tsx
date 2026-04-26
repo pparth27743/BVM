@@ -56,7 +56,7 @@ export default function Origin() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-background text-foreground px-6 transition-colors duration-700 dark:bg-black dark:text-white">
+    <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-background text-foreground px-6 transition-colors duration-700">
       {/* 3D Canvas Background */}
       <div className="absolute inset-0 z-0 opacity-70">
         <Canvas camera={{ position: [0, 0, 10] }}>
@@ -66,20 +66,26 @@ export default function Origin() {
 
       {/* Content Overlay */}
       <div className="relative z-10 text-center flex flex-col items-center">
-        <h1 className="text-4xl md:text-6xl lg:text-8xl font-serif mb-6 tracking-wide drop-shadow-[0_0_15px_rgba(255,215,0,0.4)] text-[var(--brand-gold)] dark:text-[#FFD700]">
+        <h1 className="text-4xl md:text-6xl lg:text-8xl font-serif mb-6 tracking-wide drop-shadow-[0_0_15px_rgba(255,215,0,0.4)]"
+          style={{ color: "var(--brand-gold)" }}
+        >
           The Origin
         </h1>
-        <p className="text-lg md:text-2xl font-light tracking-[0.15em] max-w-2xl mx-auto uppercase text-foreground/80 dark:text-white/80">
+        <p className="text-lg md:text-2xl font-light tracking-[0.15em] max-w-2xl mx-auto uppercase"
+          style={{ color: "var(--text-secondary)" }}
+        >
           Where Ancient Philosophy Meets Frontier Technology.
         </p>
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-12 flex flex-col items-center z-10 gap-3">
-        <span className="text-xs uppercase tracking-[0.3em] text-foreground/60 dark:text-white/60">
+        <span className="text-xs uppercase tracking-[0.3em]"
+          style={{ color: "var(--text-muted)" }}
+        >
           Scroll to Enter the Cycle
         </span>
-        <div className="w-[1px] h-16 bg-gradient-to-b from-foreground/60 dark:from-white/60 to-transparent animate-pulse" />
+        <div className="w-[1px] h-16 animate-pulse" style={{ background: "linear-gradient(to bottom, var(--text-muted), transparent)" }} />
       </div>
     </section>
   );

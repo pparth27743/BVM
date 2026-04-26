@@ -71,14 +71,7 @@ export default function Footer() {
             <a
               key={link}
               href="#"
-              className="text-xs uppercase tracking-widest font-medium transition-colors duration-300"
-              style={{ color: "var(--text-muted)" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "var(--foreground)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "var(--text-muted)")
-              }
+              className="text-xs uppercase tracking-widest font-medium transition-colors duration-300 text-[var(--text-muted)] hover:text-[var(--foreground)]"
             >
               {link}
             </a>
@@ -99,13 +92,7 @@ export default function Footer() {
             <a
               key={item}
               href="#"
-              className="transition-colors duration-300"
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "var(--text-secondary)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "var(--text-muted)")
-              }
+              className="transition-colors duration-300 text-[var(--text-muted)] hover:text-[var(--text-secondary)]"
             >
               {item}
             </a>

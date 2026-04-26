@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode — warm, editorial, premium */
+    --background: #F5F2EC;
+    --foreground: #141210;
+
+    --surface-1: #FFFFFF;
+    --surface-2: #EDE9E0;
+    --surface-raised: rgba(255, 255, 255, 0.8);
+
+    --border-subtle: rgba(20, 18, 16, 0.08);
+    --border-mid: rgba(20, 18, 16, 0.14);
+
+    --text-muted: rgba(20, 18, 16, 0.45);
+    --text-secondary: rgba(20, 18, 16, 0.65);
+
+    /* Brand palette */
+    --brand-gold: #9A7A20;
+    --brand-gold-rgb: 154, 122, 32;
+    --brand-gold-glow: rgba(154, 122, 32, 0.15);
+    --brand-blue: #0F52A8;
+    --brand-blue-rgb: 15, 82, 168;
+    --brand-blue-glow: rgba(15, 82, 168, 0.12);
+    --brand-indigo: #4A2D8E;
+    --brand-indigo-rgb: 74, 45, 142;
+    --brand-indigo-glow: rgba(74, 45, 142, 0.12);
+
+  }
+
+  .dark {
+    /* Dark mode — cosmic, deep, luminous */
+    --background: #070608;
+    --foreground: #EDE9E2;
+
+    --surface-1: #0F0E10;
+    --surface-2: #161418;
+    --surface-raised: rgba(255, 255, 255, 0.04);
+
+    --border-subtle: rgba(237, 233, 226, 0.06);
+    --border-mid: rgba(237, 233, 226, 0.1);
+
+    --text-muted: rgba(237, 233, 226, 0.38);
+    --text-secondary: rgba(237, 233, 226, 0.6);
+
+    /* Brand palette — luminous */
+    --brand-gold: #D4A84B;
+    --brand-gold-rgb: 212, 168, 75;
+    --brand-gold-glow: rgba(212, 168, 75, 0.2);
+    --brand-blue: #4A9EFF;
+    --brand-blue-rgb: 74, 158, 255;
+    --brand-blue-glow: rgba(74, 158, 255, 0.18);
+    --brand-indigo: #9B70EA;
+    --brand-indigo-rgb: 155, 112, 234;
+    --brand-indigo-glow: rgba(155, 112, 234, 0.18);
+
+  }
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::selection {
+  background: var(--brand-gold-glow);
+  color: var(--foreground);
+}
+
+a,
+button {
+  transition: all 0.25s ease;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-mid);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

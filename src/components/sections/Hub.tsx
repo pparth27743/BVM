@@ -60,8 +60,8 @@ function DataGlobe({ theme }: { theme: string | undefined }) {
 
   const isLight = theme === "light";
   const globeColor = isLight ? "#94a3b8" : "#334155";
-  const hubColor = isLight ? "#C5961E" : "#FFD700";
-  const destColor = isLight ? "#0F52A8" : "#00ffff";
+  const hubColor = "#F59E0B";
+  const destColor = "#3B82F6";
 
   return (
     <group ref={groupRef} rotation={[0.2, -Math.PI / 4, 0]}>
@@ -134,7 +134,7 @@ export default function Hub() {
         {/* Content */}
         <div className="md:pr-12">
           <span className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium opacity-90 dark:opacity-70 mb-4 block"
-            style={{ color: "var(--brand-gold)" }}
+            style={{ color: "var(--brand-brahma)" }}
           >
             The Hub
           </span>

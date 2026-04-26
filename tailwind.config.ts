@@ -15,13 +15,13 @@ const config: Config = {
         "surface-1": "var(--surface-1)",
         "surface-2": "var(--surface-2)",
         brand: {
-          gold: "var(--brand-gold)",
-          blue: "var(--brand-blue)",
-          indigo: "var(--brand-indigo)",
+          brahma: "var(--brand-brahma)",
+          vishnu: "var(--brand-vishnu)",
+          mahesh: "var(--brand-mahesh)",
         },
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         mono: ["var(--font-geist-mono)", "monospace"],
         serif: ["var(--font-playfair)", "Georgia", "serif"],
       },

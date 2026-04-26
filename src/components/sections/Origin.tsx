@@ -39,7 +39,7 @@ function CosmicOcean({ theme }: { theme: string | undefined }) {
       <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color={isLight ? "#9A7A20" : "#FFD700"} /* Stardust tint */
+          color="#F59E0B" /* Stardust tint */
           size={isLight ? 0.08 : 0.05}
           sizeAttenuation={true}
           depthWrite={false}
@@ -66,8 +66,8 @@ export default function Origin() {
 
       {/* Content Overlay */}
       <div className="relative z-10 text-center flex flex-col items-center">
-        <h1 className="text-4xl md:text-6xl lg:text-8xl font-serif mb-6 tracking-wide drop-shadow-[0_0_15px_rgba(255,215,0,0.4)]"
-          style={{ color: "var(--brand-gold)" }}
+        <h1 className="text-4xl md:text-6xl lg:text-8xl font-serif mb-6 tracking-wide drop-shadow-[0_0_15px_rgba(245,158,11,0.4)]"
+          style={{ color: "var(--brand-brahma)" }}
         >
           The Origin
         </h1>

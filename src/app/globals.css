@@ -19,43 +19,43 @@
     --text-secondary: rgba(20, 18, 16, 0.65);
 
     /* Brand palette */
-    --brand-gold: #9A7A20;
-    --brand-gold-rgb: 154, 122, 32;
-    --brand-gold-glow: rgba(154, 122, 32, 0.15);
-    --brand-blue: #0F52A8;
-    --brand-blue-rgb: 15, 82, 168;
-    --brand-blue-glow: rgba(15, 82, 168, 0.12);
-    --brand-indigo: #4A2D8E;
-    --brand-indigo-rgb: 74, 45, 142;
-    --brand-indigo-glow: rgba(74, 45, 142, 0.12);
+    --brand-brahma: #F59E0B;
+    --brand-brahma-rgb: 245, 158, 11;
+    --brand-brahma-glow: rgba(245, 158, 11, 0.15);
+    --brand-vishnu: #3B82F6;
+    --brand-vishnu-rgb: 59, 130, 246;
+    --brand-vishnu-glow: rgba(59, 130, 246, 0.15);
+    --brand-mahesh: #EF4444;
+    --brand-mahesh-rgb: 239, 68, 68;
+    --brand-mahesh-glow: rgba(239, 68, 68, 0.15);
 
   }
 
   .dark {
     /* Dark mode — cosmic, deep, luminous */
-    --background: #070608;
-    --foreground: #EDE9E2;
+    --background: #0B0F1A;
+    --foreground: #F9FAFB;
 
-    --surface-1: #0F0E10;
-    --surface-2: #161418;
-    --surface-raised: rgba(255, 255, 255, 0.04);
+    --surface-1: #111827;
+    --surface-2: #1F2937;
+    --surface-raised: rgba(17, 24, 39, 0.8);
 
-    --border-subtle: rgba(237, 233, 226, 0.06);
-    --border-mid: rgba(237, 233, 226, 0.1);
+    --border-subtle: rgba(249, 250, 251, 0.06);
+    --border-mid: rgba(249, 250, 251, 0.1);
 
-    --text-muted: rgba(237, 233, 226, 0.38);
-    --text-secondary: rgba(237, 233, 226, 0.6);
+    --text-muted: #9CA3AF;
+    --text-secondary: rgba(249, 250, 251, 0.7);
 
     /* Brand palette — luminous */
-    --brand-gold: #D4A84B;
-    --brand-gold-rgb: 212, 168, 75;
-    --brand-gold-glow: rgba(212, 168, 75, 0.2);
-    --brand-blue: #4A9EFF;
-    --brand-blue-rgb: 74, 158, 255;
-    --brand-blue-glow: rgba(74, 158, 255, 0.18);
-    --brand-indigo: #9B70EA;
-    --brand-indigo-rgb: 155, 112, 234;
-    --brand-indigo-glow: rgba(155, 112, 234, 0.18);
+    --brand-brahma: #F59E0B;
+    --brand-brahma-rgb: 245, 158, 11;
+    --brand-brahma-glow: rgba(245, 158, 11, 0.2);
+    --brand-vishnu: #3B82F6;
+    --brand-vishnu-rgb: 59, 130, 246;
+    --brand-vishnu-glow: rgba(59, 130, 246, 0.2);
+    --brand-mahesh: #EF4444;
+    --brand-mahesh-rgb: 239, 68, 68;
+    --brand-mahesh-glow: rgba(239, 68, 68, 0.2);
 
   }
 }
@@ -67,7 +67,7 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -75,7 +75,7 @@ body {
 }
 
 ::selection {
-  background: var(--brand-gold-glow);
+  background: var(--brand-brahma-glow);
   color: var(--foreground);
 }
 

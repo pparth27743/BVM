@@ -34,7 +34,7 @@ export default function ThemeToggle() {
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       <span
-        className="transition-colors duration-200 group-hover:text-[var(--brand-gold)]"
+        className="transition-colors duration-200 group-hover:text-[var(--brand-brahma)]"
         style={{ color: "inherit" }}
       >
         {isDark ? (

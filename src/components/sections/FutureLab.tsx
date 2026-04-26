@@ -25,7 +25,7 @@ function BlackHole({ theme }: { theme: string | undefined }) {
   });
 
   const isLight = theme === "light";
-  const startColor = isLight ? "#9A7A20" : "#FFD700";
+  const startColor = "#F59E0B";
   const endColor = isLight ? "#6B6B80" : "#4B0082";
 
   return (
@@ -102,8 +102,8 @@ export default function FutureLab() {
             className="w-full max-w-md text-center py-5 rounded-full border backdrop-blur-md transition-all duration-500"
             style={{
               backgroundColor: "var(--surface-raised)",
-              borderColor: "var(--brand-gold)",
-              color: "var(--brand-gold)",
+              borderColor: "var(--brand-brahma)",
+              color: "var(--brand-brahma)",
             }}
           >
             <span className="text-sm font-medium tracking-widest uppercase">
@@ -120,7 +120,7 @@ export default function FutureLab() {
               className={`absolute inset-0 rounded-full blur-[20px] transition-all duration-700 ease-out pointer-events-none ${
                 isHovered ? "opacity-20" : "opacity-0"
               }`}
-              style={{ background: isHovered ? "var(--brand-gold)" : "transparent" }}
+              style={{ background: isHovered ? "var(--brand-brahma)" : "transparent" }}
             />
             
             <input

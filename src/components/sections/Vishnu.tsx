@@ -47,7 +47,7 @@ function DataSphere({ theme }: { theme: string | undefined }) {
       <Points ref={pointsRef} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color={isLight ? "#0F52A8" : "#00ffff"}
+          color="#3B82F6"
           size={isLight ? 0.04 : 0.03}
           sizeAttenuation={true}
           depthWrite={false}
@@ -82,7 +82,7 @@ export default function Vishnu() {
         <div className="md:text-right">
           <span
             className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium opacity-70 mb-4 block"
-            style={{ color: "var(--brand-blue)" }}
+            style={{ color: "var(--brand-vishnu)" }}
           >
             Preservation
           </span>
@@ -94,7 +94,7 @@ export default function Vishnu() {
             <br />
             <span
               className="opacity-80 font-light text-3xl md:text-5xl italic font-sans"
-              style={{ color: "var(--brand-blue)" }}
+              style={{ color: "var(--brand-vishnu)" }}
             >The Preservation Core</span>
           </h2>
           <p

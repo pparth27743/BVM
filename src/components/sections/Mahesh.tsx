@@ -41,7 +41,7 @@ function TandavaFire({ theme }: { theme: string | undefined }) {
       <Points ref={pointsRef} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color={isLight ? "#4A2D8E" : "#A8A8C0"} /* Indigo for light vs Ash Silver for dark */
+          color="#EF4444"
           size={isLight ? 0.08 : 0.06}
           sizeAttenuation={true}
           depthWrite={false}
@@ -60,10 +60,10 @@ export default function Mahesh() {
   const theme = mounted ? resolvedTheme : "dark";
 
   return (
-    <section className="relative w-full min-h-screen py-24 flex items-center transition-colors duration-700 bg-gradient-to-b from-[#D5E4F5] via-[#EBE4F4] to-surface-1 dark:from-[#010912] dark:via-[#0B0215] dark:to-[#040008] text-[var(--brand-indigo)] dark:text-[#4B0082] overflow-hidden">
+    <section className="relative w-full min-h-screen py-24 flex items-center transition-colors duration-700 bg-gradient-to-b from-[#D5E4F5] via-[#EBE4F4] to-surface-1 dark:from-[#010912] dark:via-[#0B0215] dark:to-[#040008] text-[var(--brand-mahesh)] dark:text-[#EF4444] overflow-hidden">
       
       {/* Background Ash Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-[var(--brand-indigo)] dark:bg-[#4B0082] blur-[150px] opacity-10 dark:opacity-20 pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-[var(--brand-mahesh)] dark:bg-[#EF4444] blur-[150px] opacity-10 dark:opacity-20 pointer-events-none rounded-full" />
       
       {/* 3D Visuals */}
       <div className="absolute inset-0 z-0 h-full w-full opacity-60 dark:opacity-80">
@@ -77,7 +77,7 @@ export default function Mahesh() {
         {/* Content aligned left again */}
         <div className="text-foreground dark:text-[#E0E0E0]">
           <span className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium opacity-70 mb-4 block"
-            style={{ color: "var(--brand-indigo)" }}
+            style={{ color: "var(--brand-mahesh)" }}
           >
             Transformation
           </span>
@@ -86,7 +86,7 @@ export default function Mahesh() {
           >
             MAHESH.
             <br />
-            <span className="opacity-80 font-light text-3xl md:text-5xl italic font-sans" style={{ color: "var(--brand-indigo)" }}>The Transformation Forge</span>
+            <span className="opacity-80 font-light text-3xl md:text-5xl italic font-sans" style={{ color: "var(--brand-mahesh)" }}>The Transformation Forge</span>
           </h2>
           <p className="text-lg md:text-xl font-light tracking-wide max-w-xl leading-relaxed font-sans"
             style={{ color: "var(--text-secondary)" }}

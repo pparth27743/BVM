@@ -33,7 +33,7 @@ function LotusCore({ theme }: { theme: string | undefined }) {
           clearcoat={1}
           attenuationDistance={2.5}
           attenuationColor="#ffffff"
-          color={isLight ? "#C5961E" : "#FFD700"}
+          color="#F59E0B"
           opacity={0.9}
         />
       </mesh>
@@ -44,7 +44,7 @@ function LotusCore({ theme }: { theme: string | undefined }) {
 function Mantras() {
   return (
     <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.03] flex items-center justify-center overflow-hidden mix-blend-overlay">
-      <div className="text-[12rem] font-serif leading-none rotate-[20deg] scale-150 transform transition select-none tracking-[2rem] text-black dark:text-[#FFD700]">
+      <div className="text-[12rem] font-serif leading-none rotate-[20deg] scale-150 transform transition select-none tracking-[2rem] text-black dark:text-[#F59E0B]">
         ब्रह्मन् सृष्टेः मूलम् 
         <br />
         अहं ब्रह्मास्मि
@@ -60,7 +60,7 @@ export default function Brahma() {
   const theme = mounted ? resolvedTheme : "dark";
 
   return (
-    <section className="relative w-full min-h-screen flex items-center py-20 bg-gradient-to-b from-background via-surface-1 to-[#F2EFE8] text-[var(--brand-gold)] dark:from-black dark:via-[#111] dark:to-[#1F1c16] dark:text-[#FFD700] transition-colors duration-700 overflow-hidden">
+    <section className="relative w-full min-h-screen flex items-center py-20 bg-gradient-to-b from-background via-surface-1 to-[#F2EFE8] text-[var(--brand-brahma)] dark:from-black dark:via-[#111] dark:to-[#1F1c16] dark:text-[#F59E0B] transition-colors duration-700 overflow-hidden">
       <Mantras />
 
       {/* 3D Visuals */}
@@ -68,7 +68,7 @@ export default function Brahma() {
         <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
           <ambientLight intensity={theme === "light" ? 1.5 : 0.5} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={theme === "light" ? 1 : 2} color="#ffffff" />
-          <pointLight position={[-10, -10, -10]} intensity={1} color={theme === "light" ? "#C5961E" : "#FFD700"} />
+          <pointLight position={[-10, -10, -10]} intensity={1} color="#F59E0B" />
           <PresentationControls snap global zoom={1.2} polar={[-0.2, 0.2]} azimuth={[-0.2, 0.2]}>
             <LotusCore theme={theme} />
           </PresentationControls>
@@ -79,7 +79,7 @@ export default function Brahma() {
         {/* Content */}
         <div>
           <span className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-medium mb-4 block opacity-70"
-            style={{ color: "var(--brand-gold)" }}
+            style={{ color: "var(--brand-brahma)" }}
           >
             Creation
           </span>
@@ -88,7 +88,7 @@ export default function Brahma() {
           >
             BRAHMA.
             <br />
-            <span className="opacity-80 font-light text-3xl md:text-5xl italic" style={{ color: "var(--brand-gold)" }}>The Incubation Lab</span>
+            <span className="opacity-80 font-light text-3xl md:text-5xl italic" style={{ color: "var(--brand-brahma)" }}>The Incubation Lab</span>
           </h2>
           <p className="text-lg md:text-xl font-light tracking-wide max-w-lg leading-relaxed font-sans"
             style={{ color: "var(--text-secondary)" }}

@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { MeshTransmissionMaterial, Float, PresentationControls } from "@react-three/drei";
 import { useTheme } from "next-themes";
 
-function LotusCore({ theme }: { theme: string | undefined }) {
+function LotusCore({ }: { theme: string | undefined }) {
   const meshRef = useRef<import("three").Mesh>(null);
   
   useFrame((state, delta) => {
@@ -14,8 +14,6 @@ function LotusCore({ theme }: { theme: string | undefined }) {
       meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
     }
   });
-
-  const isLight = theme === "light";
 
   return (
     <Float floatIntensity={2} speed={1.5} rotationIntensity={0.5}>

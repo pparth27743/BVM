@@ -4,7 +4,7 @@ module.exports = {
       name: "bvm-app",
       script: ".next/standalone/server.js",
       cwd: __dirname,
-      instances: "max",
+      instances: 1,
       exec_mode: "cluster",
       env: {
         NODE_ENV: "production",
